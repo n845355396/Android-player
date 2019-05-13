@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bg"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:id="@+id/text_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4F2B2B2B"
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/music_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="歌曲名"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/music_singer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="歌手"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/bt_music_list"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/music_list" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="105dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ic_circle"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/play_span"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <!--设置当前歌曲时间-->
+        <TextView
+            android:id="@+id/listen_current_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+        <!--设置进度条-->
+        <SeekBar
+            android:id="@+id/listen_jindutiao_sb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <!--设置歌曲总时长-->
+        <TextView
+            android:id="@+id/listen_length_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02:30"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_needle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_lay"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ic_needle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:paddingLeft="40dp"
+            android:src="@drawable/ic_needle"
+            tools:ignore="MissingConstraints" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/play_span"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#4F2B2B2B"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_last"
+            android:onClick="musicLast"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/bt_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_play"
+            android:onClick="musicPlay"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_next"
+            android:onClick="musicNext"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
